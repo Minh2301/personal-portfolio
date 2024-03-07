@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/personal-portolio/static/css/main.2f3b3c5c.css",
+    "main.js": "/personal-portolio/static/js/main.2efbd36a.js",
+    "static/js/453.b21437c2.chunk.js": "/personal-portolio/static/js/453.b21437c2.chunk.js",
+    "static/media/IMG_3285.JPG": "/personal-portolio/static/media/IMG_3285.101e1290e579b0dfb09d.JPG",
+    "static/media/chain-z-img-1.png": "/personal-portolio/static/media/chain-z-img-1.7c771e0ce529456c7b86.png",
+    "static/media/thriving-thunder-img.png": "/personal-portolio/static/media/thriving-thunder-img.11c7f3e230a7d340175c.png",
+    "static/media/IMG_1090.JPG": "/personal-portolio/static/media/IMG_1090.fdbbf86bbf731a552011.JPG",
+    "index.html": "/personal-portolio/index.html",
+    "main.2f3b3c5c.css.map": "/personal-portolio/static/css/main.2f3b3c5c.css.map",
+    "main.2efbd36a.js.map": "/personal-portolio/static/js/main.2efbd36a.js.map",
+    "453.b21437c2.chunk.js.map": "/personal-portolio/static/js/453.b21437c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f3b3c5c.css",
+    "static/js/main.2efbd36a.js"
+  ]
+}
