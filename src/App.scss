@@ -1,0 +1,499 @@
+//variable setting
+$white: #FAFAF9;
+$gray:#D9D9D9;
+$black: #000000;
+$lightGreen:#D1D1C7;
+$midGreen:#AEAE9D;
+$darkGreen: #8C8C73;
+//function setting
+@mixin setFont( $fontWeight, $fontSize, $fontColor){
+  font-family: 'Syne';
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color:$fontColor;
+}
+@mixin setBackgroundImg($url){
+    background-image:url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+//general setting
+.text{
+  &--green{
+    color: $midGreen;
+  }
+}
+h1{
+@include setFont(600, 45px, $midGreen);
+transform: scale(1, 0.7);
+}
+h2{
+@include setFont(300, 35px, $lightGreen);
+}
+p{
+  @include setFont(200, 35px, $white);
+  transform: scale(1, 0.9);
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  background: $black;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.page{
+  width:85vw;
+  &>*{
+    width: 100%;
+  }
+}
+
+//nav bar
+.nav{
+  &-menu{
+    z-index: 5;
+    background: none;
+    border:none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width:30px;
+    height:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    &-item{
+      width: 100%;
+      height: 2px;
+      background:$white;
+      &--unactive{
+        display: none;
+      }
+    }
+  }
+   &-section{
+     z-index: 3;
+     position: fixed;
+     left: 0px;
+     top:0px;
+      width:100vw;
+      height: 100vh;
+      background-color:$darkGreen;
+      display: none;
+      &--active{
+        display: flex;
+        align-items: center;
+      }
+      &-footer{
+        position:absolute;
+        bottom: 20px;
+        left: 20px;
+        @include setFont(400, 20px, $white);
+      }
+    }
+    &-text{
+      padding-left: 30px;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: space-between;
+      &-item{
+        display:block;
+        text-decoration: none;
+        @include setFont(600,120px, $white);
+        transform: scale(1, 0.8);
+        &:after{
+          content:"";
+          position: absolute;
+          background-color:$white;
+          height: 5px;
+          width:0px;
+          left:0px;
+          bottom: -10px;
+          transition: 0.3s;
+        }
+        &:hover:after{
+          width:100%;
+        }
+      }
+    }
+
+}
+
+.home-section{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &-item{
+    width:60%;
+    @include setFont(600, 70px, $white);
+        transform: scale(1, 0.8);
+  }
+  &-role{
+    display: inline-block;
+    @include setFont(600, 65px,$midGreen);
+    &>span{
+      
+      width:100%;
+      height: 5px;
+      background-color: $midGreen;
+      display: block;
+      position: relative;
+      bottom: 0px;
+      left:0px;
+    }
+  }
+  &-img{
+    width:30%;
+    border-radius: 50%;
+    aspect-ratio: 1/1.1;
+    @include setBackgroundImg('./image/IMG_1090.JPG');
+  }
+}
+.about-section{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  &-wrapper{
+    margin-top: 30px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-content{
+    width:45%;
+    height: 70%;
+  }
+  &-img{
+    width: 50%;
+    aspect-ratio: 1/1.5;
+    @include setBackgroundImg('./image/IMG_3285.JPG');
+  }
+}
+.project{
+  &-section{
+  width:100%;
+  &-wrapper{
+    width:100%;
+  display:flex;
+  justify-content: space-between;
+  }
+  &-item{
+    width: 45%;
+  }
+  &-img{
+    display: block;
+    width:100%;
+    aspect-ratio: 1/1;
+    border: 3px solid $midGreen;
+    &-chain-z{
+      @include setBackgroundImg('./image/chain-z-img-1.png');
+    }
+    &-thriving-thunder{
+      @include setBackgroundImg('./image/thriving-thunder-img.png');
+    }
+  }
+
+  }
+  &-page{
+    margin-top:50px;
+    width:100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    &-header{
+      @include setFont(700, 40px, $midGreen);
+    }
+    &-wrapper{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-content{
+      display:flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: space-between;
+      width:55%;
+      height: 80%;
+    }
+    &-img{
+      width:420px;
+      aspect-ratio: 1/1.2;
+      background-color: $gray;
+      border: 5px solid $midGreen;
+    &-chain-z{
+      @include setBackgroundImg('./image/chain-z-img-1.png');
+    }
+    &-thriving-thunder{
+      @include setBackgroundImg('./image/thriving-thunder-img.png');
+    }
+    }
+    &-button{
+      color: $black;
+      display: flex;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      width:250px;
+      height:50px;
+      background-color: $white;
+      border-radius: 50px;
+      
+    }
+  }
+}
+.skill{
+  &-section{
+    margin-top:150px;
+    margin-bottom: 150px;
+    width:100%;
+    &>h2{
+      transform: scale(1, 0.9);
+    }
+    &-wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: space-between;
+    }
+ 
+  }
+  &-line{
+    width:80%;
+    height: 10px;
+    border: 1px solid $white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   &-item{
+     background-color: $white;
+     height: 100%;
+   }
+   &-wrapper{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  &-name{
+    @include setFont(300, 30px, $white);
+    transform: scale(1, 0.8);
+  }
+  }
+}
+.contact{
+  &-form{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    justify-content: space-between;
+    width:60%;
+    &-input{
+      width: 48%;
+      background: none;
+      border: none;
+      border-bottom: 2px solid $midGreen;
+      @include setFont(200, 20px, $midGreen);
+
+    }
+    &-textarea{
+      width:100%;
+      height: 100px;
+    }
+    &-button{
+      width: auto;
+      padding: 15px 35px;
+      border-radius: 20px;
+      border:none;
+      background-color: $white;
+      @include setFont(200, 20px, $black);
+    }
+  }
+  &-section{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    &-wrapper{
+      display: flex;
+      flex-direction: row;
+      align-items: top;
+      justify-content: space-between;
+    }
+  }
+  &-info-wrapper{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+  }
+  &-other{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &-info{
+    @include setFont(200, 17px, $midGreen);
+  }
+  &-header{
+    font-size: 25px;
+  }
+}
+@media (min-width:320px) and (max-width:900px){
+h1{
+@include setFont(600, 40px, $midGreen);
+}
+h2{
+@include setFont(300, 35px, $lightGreen);
+}
+p{
+  @include setFont(200, 30px, $white);
+}
+.nav-text{
+  height: 65vh;
+}
+.nav-text-item{
+  @include setFont(600, 70px, $white);
+}
+.nav-section-footer{
+  @include setFont(200, 15px, $white);
+}
+  .home-section{
+    margin-top:50px;
+    height: 90vh;
+    margin-bottom: 50px;
+    flex-direction: column;
+    &-item{
+    order:2;
+    width:100%;
+    text-align:center;
+    @include setFont(600, 60px, $white);
+        transform: scale(1, 0.8);
+  }
+  &-role{
+    order:1;
+    display: inline-block;
+    @include setFont(600, 55px,$midGreen);
+    &>span{
+      
+      width:100%;
+      height: 5px;
+      background-color: $midGreen;
+      display: block;
+      position: relative;
+      bottom: 0px;
+      left:0px;
+    }
+}
+&-img{
+    width:80%;
+  }
+}
+.about-section{
+  &-wrapper{
+    flex-direction: column;
+  }
+  &-img{
+    width:100%;
+    aspect-ratio: 1/0.6;
+  }
+  &-content{
+    margin-top: 50px;
+    align-items: left;
+    width:100%;
+  }
+.skill-section{
+  margin: 50px 0px;
+  &-wrapper{
+    height: 95%;
+  }
+}
+.skill-line{
+  width: 70%;
+  &-wrapper{
+    height: 40px;
+  }
+  &-name{
+    @include setFont(300, 20px, $white);
+  }
+}
+}
+.project{
+  &-section{
+    &-wrapper{
+      flex-direction: column;
+    }
+    &-item{
+      width:100%;
+      margin-bottom: 40px;
+      &>p{
+        @include setFont(200, 25px, $white);
+      }
+      ;
+    }
+    &-img{
+      aspect-ratio: 1/0.7;
+    }
+}
+  &-page{
+    &-wrapper{
+      margin-top: 30px;
+      flex-direction: column;
+    }
+    &-content{
+      margin-top: 50px;
+      width:100%;
+      height: auto;
+      &>h2{
+        @include setFont(600, 30px, $midGreen);
+        transform: scale(1, 0.8);
+      }
+      &>p{
+        @include setFont(200, 25px, $white);
+      }
+    }
+    &-img{
+      aspect-ratio: 1/1;
+    }
+    &-button{
+      width:100%;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}
+.contact{
+  &-form{
+    width:100%;
+    order:1;
+  
+  }
+  &-info-wrapper{
+    order: 2;
+    width: 100%;
+    flex-direction: row;
+  }
+  &-section{
+  margin-top: 50px;
+  &-wrapper{
+    row-gap: 50px;
+    flex-direction: column;
+  }
+  }
+
+}
+}
+
